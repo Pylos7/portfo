@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Portfolio by Pylos7</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" href="static/assets/favicons/passion.ico" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Welcome</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="forecast.html" class="active">Forecast</a></li>
+						<li><a href="todo.html">To-Do</a></li>
+						<li><a href="sentiment.html">Sentiment</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Weather Forecast App</h1>
+							<span class="image fit"><img src="static/assets/images/ForecastFull.jpg" alt="" /></span>
+							<p>To create a Python application that fetches real-time weather data from an API and displays it in a user-friendly interface, along with data visualization for weather trends, you can follow these steps:</p>
+								<ol>
+									<li>Set up your development environment:
+										<ul>
+											<li>Install Python: Visit the <a href="https://www.python.org/">Python website</a> and download the latest version of Python suitable for your operating system.</li>
+											<li>Install a code editor: Choose a code editor like <a href="https://code.visualstudio.com/">Visual Studio Code</a>, <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, or Atom, and install it on your machine.</li>
+										</ul>
+									</li>
+									<li>Create a new Python project:
+										<ul>
+											<li>Open your code editor and create a new directory for your project.</li>
+											<li>Open a terminal or command prompt in the project directory.</li>
+										</ul>
+									</li>
+									<li>Install necessary libraries:
+										<ul>
+											<li>Choose a weather API provider that offers real-time weather data, such as <a href="https://openweathermap.org/api">OpenWeatherMap</a>, <a href="https://www.weatherbit.io/features">Weatherbit</a>, or <a href="https://developer.accuweather.com/">AccuWeather</a>.</li>
+											<pre><code>pip install requests<br>install matplotlib</code></pre>
+										</ul>
+									</li>
+									<li>Obtain an API key:
+										<ul>
+											<li>Choose a weather API provider that offers real-time weather data, such as OpenWeatherMap, Weatherbit, or AccuWeather.</li>
+											<li>Create an account on their website and obtain an API key. The API key will be required to make requests to their API and fetch weather data.</li>
+										</ul>
+									</li>
+									<li>Write the code:
+										<ul>
+											<li>Create a Python script file (e.g., 'weather_app.py') in your project directory.</li>
+											<li>Import the necessary libraries:</li>
+											<pre><code>import requests<br>import matplotlib.pyplot as plt</code></pre>
+											<li>Define a function to fetch weather data using the API:</li>
+											<pre><code>def fetch_weather_data(api_key, location):<br>	url = f"https://api.weatherprovider.com/weather?apikey={api_key}&location={location}"<br>	response = requests.get(url)<br>	data = response.json()<br>	return data</code></pre>
+											<li>Define a function to display the weather data:</li>
+											<pre><code>def display_weather_data(data):<br>	# Extract relevant information from the data and display it in a user-friendly format<br>	print("Current Weather:")<br>	print(f"Temperature: {data['current']['temperature']}°C")<br>	print(f"Humidity: {data['current']['humidity']}%")<br>	print("\n5-Day Forecast:")<br><br>	for day in data['forecast']:<br>		print(f"Date: {day['date']}")<br>		print(f"Temperature: {day['temperature']}°C")<br>		print(f"Humidity: {day['humidity']}%")<br>		print("---------------")</code></pre>
+											<li>Define a function for data visualization:</li>
+											<pre><code>def visualize_weather_data(data):<br>	# Extract relevant data for visualization (e.g., temperature, humidity) and plot a graph<br>	dates = [day['date'] for day in data['forecast']]<br>	temperatures = [day['temperature'] for day in data['forecast']]<br>	humidities = [day['humidity'] for day in data['forecast']]<br><br>	plt.plot(dates, temperatures, label='Temperature (°C)')<br>	plt.plot(dates, humidities, label='Humidity (%)')<br>	plt.xlabel('Date')<br>	plt.ylabel('Value')<br>	plt.title('Weather Trends')<br>	plt.legend()<br>	plt.xticks(rotation=45)<br>	plt.show()</code></pre>
+											<li>Implement the main part of the application:</li>
+											<pre><code>def main():<br>	api_key = "YOUR_API_KEY"<br>	location = input("Enter a location: ")<br><br>	data = fetch_weather_data(api_key, location)<br>	display_weather_data(data)<br>	visualize_weather_data(data)<br><br>if __name__ == '__main__':<br>	main()</code></pre>
+										</ul>
+									</li>
+									<li>Replace '"YOUR_API_KEY"' with the API key you obtained from the weather API provider.</li>
+									<li>To run the application:
+										<ul>
+											<li>Save the 'weather_app.py' file.</li>
+											<li>Open a terminal or command prompt in the project directory.</li>
+											<li>Run the following command:</li>
+											<pre><code>python weather_app.py</code></pre>
+											<li>The application will prompt you to enter a location.</li>
+											<li>After entering the location, the application will fetch the weather data from the API using the provided API key and location.</li>
+											<li>It will then display the current weather conditions, temperature, humidity, and a 5-day forecast in the console.</li>
+											<li>Additionally, it will generate a graph using matplotlib to visualize the temperature and humidity trends for the 5-day forecast.</li>
+										</ul>
+									</li>
+								</ol>
+							<p>Remember to replace "YOUR_API_KEY" with your actual API key before running the application. Also, ensure that you have a stable internet connection for successful API requests.</p>
+							<p>Note: This is a basic implementation to get you started. You can further enhance the project by adding error handling, additional features, a more sophisticated user interface, and improved data visualization options based on your requirements and creativity.</p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Pylos LLC. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Portfolio by Pylos7</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" href="static/assets/favicons/passion.ico" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Welcome</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="forecast.html">Forecast</a></li>
+						<li><a href="todo.html" class="active">To-Do</a></li>
+						<li><a href="sentiment.html">Sentiment</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">To-Do List Manager</h1>
+							<span class="image fit"><img src="static/assets/images/ListManagerFull.jpg" alt="" /></span>
+							<p>To develop a Python-based todo list manager with the mentioned features, you can follow these steps:</p>
+							<ol>
+								<li>Set up the Project Environment:
+									<ul>
+										<li>Install Python on your system if you haven't already.</li>
+										<li>Create a new directory for your project.</li>
+										<li>Set up a virtual environment to keep your project dependencies isolated.</li>
+									</ul>
+								</li>
+								<li>Use pip, the Python package manager, to install the necessary libraries. Some commonly used libraries for this type of project are:
+									<ul>
+										<li>Flask: A web framework for creating the application.</li>
+										<li>SQLAlchemy: A library for working with databases.</li>
+										<li>WTForms: A library for form validation and rendering.</li>
+										<li>Flask-Login: A library for managing user authentication.</li>
+										<li>Flask-Migrate: A library for handling database migrations.</li>
+									</ul>
+								</li>
+								<li>Design the Database:
+									<ul>
+										<li>Decide on the structure of your database. You can use a simple SQLite database for this project.</li>
+										<li>Define the necessary tables to store tasks, due dates, priorities, and other relevant information.</li>
+										<li>Use SQLAlchemy to create the necessary models to represent these tables.</li>
+									</ul>
+								</li>
+								<li>Create the Flask Application:
+									<ul>
+										<li>Set up the Flask application by creating a new Python file, e.g., 'app.py'.</li>
+										<li>Import the required libraries and initialize the Flask app.</li>
+										<li>Configure the database connection, secret key, and other necessary configurations.</li>
+									</ul>
+								</li>
+								<li>Define Routes and Views:
+									<ul>
+										<li>Create routes for different functionalities, such as displaying the task list, adding tasks, editing tasks, and marking tasks as complete.</li>
+										<li>Implement the corresponding view functions to handle these routes.</li>
+										<li>Use WTForms to create forms for adding and editing tasks, ensuring data validation.</li>
+									</ul>
+								</li>
+								<li>Implement User Authentication:
+									<ul>
+										<li>Set up a user authentication system to secure the todo list manager.</li>
+										<li>Use Flask-Login to manage user sessions, user login, and registration.</li>
+										<li>Implement routes and views for user login, registration, and logout.</li>
+									</ul>
+								</li>
+								<li>Add Task Categorization and Search Functionality:
+									<ul>
+										<li>Extend the database schema to include task categories.</li>
+										<li>Implement the ability to assign tasks to categories and display tasks by category.</li>
+										<li>Implement a search functionality to allow users to search for specific tasks by keywords.</li>
+									</ul>
+								</li>
+								<li>Enhance the Application:
+									<ul>
+										<li>Implement additional features like task prioritization, due dates, and reminders.</li>
+										<li>Use JavaScript and AJAX to add interactive elements to the user interface, such as dynamically updating task lists.</li>
+										<li>Style the application using CSS frameworks like Bootstrap to improve the visual appearance.</li>
+									</ul>
+								</li>
+								<li>Test and Debug:
+									<ul>
+										<li>Test the application thoroughly to ensure all features work as intended.</li>
+										<li>Identify and fix any bugs or issues that arise during testing.</li>
+										<li>Consider writing automated tests using libraries like pytest to ensure future changes don't introduce regressions.</li>
+									</ul>
+								</li>
+								<li>Deploy the Application:
+									<ul>
+										<li>Choose a hosting provider or platform to deploy your application. Options include Heroku, PythonAnywhere, or deploying on your own server.</li>
+										<li>Set up the necessary configurations and deploy your application.</li>
+										<li>Make sure to secure any sensitive information, such as database credentials.</li>
+									</ul>
+								</li>
+							</ol>
+							<p>Remember that this is a high-level overview, and each step may require further research and implementation details. You may need to refer to the documentation and examples provided by the libraries used for more specific information on their usage.</p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Pylos LLC. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
