@@ -14,7 +14,16 @@
 		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
+		<!-- Redirect Script -->
+		<script>
+			window.onload = function() {
+			   setTimeout(myURL, 5000);
+			}
+	  
+			function myURL() {
+			   window.location.href = "index.html";
+			}
+		 </script>
 		<!-- Header -->
 			<header id="header">
 				<a href="index.html" class="title">Welcome</a>
@@ -62,3 +71,8 @@
 
 	</body>
 </html>
+
+window.onload = function() {
+    // similar behavior as clicking on a link
+    window.location.href = "http://stackoverflow.com";
+}
